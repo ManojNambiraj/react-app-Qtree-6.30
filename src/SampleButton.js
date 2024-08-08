@@ -1,12 +1,13 @@
-import React from 'react'
+import React from "react";
 
 function SampleButton(props) {
-    
   return (
     <div>
-      <button>{props.userName} {props.number}</button>
+      <button className="demoBtn" style={{ backgroundColor: props.color }}>
+        {props.userName} {props.number}
+      </button>
     </div>
-  )
+  );
 }
 
-export default SampleButton
+export default SampleButton;
