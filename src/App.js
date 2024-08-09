@@ -1,30 +1,30 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
+import RouterPages from "./pages/RouterPages";
 // import SampleButton from "./SampleButton";
 
 function App() {
+  // const [like, setLike] = useState(0);
 
-  const [like, setLike] = useState(0);
-  const [Dislike, setDislike] = useState(0);
-
-  const handleLike = () => {
-    setLike(like + 1)
-  }
-
-  const handleDislike = () => {
-    setDislike(Dislike + 1)
-  }
+  // const handleLike = () => {
+  //   setLike(like + 1);
+  // };
+  
+  // const handleDislike = () => {
+  //   setLike(like - 1);
+  // };
 
   return (
     <div className="App">
 
-      <h1>{like}</h1><h3>{Dislike}</h3>
+      <RouterPages />
+
+      {/* <h1>{like}</h1>
 
       <button onClick={handleLike}>Like👍</button>
-      <button onClick={handleDislike}>Dislike👎</button>
+      <button onClick={handleDislike}>Dislike👎</button> */}
 
-
-      {/* <SampleButton userName={"ALL"} number={1} color={"red"} />
+      {/* <SampleButton userName={"ALL"} color={"red"} />
       <SampleButton userName={"Music"} color={"blue"} />
       <SampleButton userName={"Drama"} color={"green"} />
       <SampleButton userName={"Sports"} color={"yellow"} />
@@ -37,6 +37,5 @@ function App() {
 }
 
 export default App;
-
 
 // Hooks -> useState

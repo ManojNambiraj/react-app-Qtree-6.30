@@ -4,7 +4,7 @@ function SampleButton(props) {
   return (
     <div>
       <button className="demoBtn" style={{ backgroundColor: props.color }}>
-        {props.userName} {props.number}
+        {props.userName}
       </button>
     </div>
   );
