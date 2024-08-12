@@ -1,6 +1,7 @@
 // import { useState } from "react";
 import "./App.css";
 import RouterPages from "./pages/RouterPages";
+import ShoppingCart from "./pages/ShoppingCart";
 // import SampleButton from "./SampleButton";
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
   return (
     <div className="App">
 
-      <RouterPages />
+      {/* <RouterPages /> */}
+
+      <ShoppingCart />
 
       {/* <h1>{like}</h1>
 
