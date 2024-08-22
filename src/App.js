@@ -2,6 +2,7 @@
 import "./App.css";
 import RouterPages from "./pages/RouterPages";
 import ShoppingCart from "./pages/ShoppingCart";
+import UserApp from "./pages/UserApp";
 // import SampleButton from "./SampleButton";
 
 function App() {
@@ -10,17 +11,18 @@ function App() {
   // const handleLike = () => {
   //   setLike(like + 1);
   // };
-  
+
   // const handleDislike = () => {
   //   setLike(like - 1);
   // };
 
   return (
     <div className="App">
-
       {/* <RouterPages /> */}
 
-      <ShoppingCart />
+      {/* <ShoppingCart /> */}
+       
+      <UserApp />
 
       {/* <h1>{like}</h1>
 

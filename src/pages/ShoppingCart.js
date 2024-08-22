@@ -19,7 +19,7 @@ function ShoppingCart() {
         return {
           ...state,
           cartItem: state.cartItem.filter(
-            (cItem) => cItem.id != action.item.id
+            (item) => item.id != action.item.id
           ),
           total: state.total - action.item.price,
         };
