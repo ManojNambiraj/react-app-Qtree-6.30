@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "./CreateUser.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-const CreateUser = () => {
+function EditUser() {
   const navigate = useNavigate();
+  const params = useParams();
 
   const [userInput, setUserInput] = useState({
     firstName: "",
@@ -13,6 +13,18 @@ const CreateUser = () => {
     mobile: "",
     password: "",
   });
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
+  const getUserData = async () => {
+    const userData = await axios.get(
+      `https://66c74cf5732bf1b79fa61be6.mockapi.io/students/${params.id}`
+    );
+
+    setUserInput(userData.data);
+  };
 
   const handleChange = ({ target: { value, name } }) => {
     setUserInput({ ...userInput, [name]: value });
@@ -23,8 +35,8 @@ const CreateUser = () => {
 
     const { firstName, age, email, mobile, password } = userInput;
 
-    const postData = await axios.post(
-      "https://66c74cf5732bf1b79fa61be6.mockapi.io/students",
+    await axios.put(
+      `https://66c74cf5732bf1b79fa61be6.mockapi.io/students/${params.id}`,
       {
         firstName,
         age,
@@ -41,7 +53,7 @@ const CreateUser = () => {
     <div className="userRegisterForm">
       <form onSubmit={handleSubmit}>
         <h1 style={{ textAlign: "center" }} className="mb-5">
-          User Register
+          Edit User
         </h1>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">
@@ -110,6 +122,6 @@ const CreateUser = () => {
       </form>
     </div>
   );
-};
+}
 
-export default CreateUser;
+export default EditUser;

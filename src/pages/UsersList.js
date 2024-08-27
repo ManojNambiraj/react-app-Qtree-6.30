@@ -17,6 +17,15 @@ const UsersList = () => {
     setUser(userData.data);
   };
 
+  const handleDelete = async (id) => {
+    await axios.delete(
+      `https://66c74cf5732bf1b79fa61be6.mockapi.io/students/${id}`
+    );
+
+    getData();
+    alert("User deleted");
+  };
+
   // Create     read      update     delete
   // POST       GET        PUT       DELETE
 
@@ -35,7 +44,6 @@ const UsersList = () => {
             <th scope="col">Mobile</th>
             <th scope="col">Password</th>
             <th scope="col">Actions</th>
-            
           </tr>
         </thead>
         <tbody>
@@ -43,14 +51,26 @@ const UsersList = () => {
             return (
               <tr>
                 <th scope="row">{index + 1}</th>
-                <td>{item.name}</td>
+                <td>{item.firstName}</td>
                 <td>{item.age}</td>
                 <td>{item.email}</td>
                 <td>{item.mobile}</td>
                 <td>{item.password}</td>
                 <td>
-                    <button className="btn btn-success btn-sm">Edit</button>
-                    <button className="btn btn-danger btn-sm">delete</button>
+                  <Link
+                    to={`/edit/${item.id}`}
+                    className="btn btn-success btn-sm"
+                  >
+                    Edit
+                  </Link>
+                  <button
+                    className="btn btn-danger btn-sm"
+                    onClick={() => {
+                      handleDelete(item.id);
+                    }}
+                  >
+                    delete
+                  </button>
                 </td>
               </tr>
             );
