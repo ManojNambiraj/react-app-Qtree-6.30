@@ -1,5 +1,7 @@
 // import { useState } from "react";
 import "./App.css";
+import GlobalRedux from "./pages/Global/GlobalRedux";
+import GlobalState from "./pages/Global/GlobalState";
 import RouterPages from "./pages/RouterPages";
 import ShoppingCart from "./pages/ShoppingCart";
 import UserApp from "./pages/UserApp";
@@ -21,8 +23,12 @@ function App() {
       {/* <RouterPages /> */}
 
       {/* <ShoppingCart /> */}
-       
-      <UserApp />
+
+      {/* <UserApp /> */}
+
+      {/* <GlobalState /> */}
+
+      <GlobalRedux />
 
       {/* <h1>{like}</h1>
 
